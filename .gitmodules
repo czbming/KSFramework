@@ -3,4 +3,4 @@
 	url = https://github.com/mr-kelly/KEngine
 [submodule "xLua"]
 	path = xLua
-	url = https://github.com/mr-kelly/xLua.git
+	url = https://github.com/Tencent/xLua.git
