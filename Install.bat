@@ -4,8 +4,8 @@
 
 set SRC_ASSETS_PATH=KEngine\KEngine.UnityProject\Assets
 set DST_ASSETS_PATH=KSFramework\Assets
-set DST_PLUGIN_PATH=KSFramework\Assets\Plugins\KEngine
-set DST_EDITOR_PATH=KSFramework\Assets\Plugins\Editor\KEngineEditor
+set DST_PLUGIN_PATH=KSFramework\Assets\KEngine
+set DST_EDITOR_PATH=KSFramework\Assets\Editor\KEngineEditor
 
 
 :: Resources
@@ -43,12 +43,15 @@ mkdir KSFramework\Assets\Plugins\libs\ 2>nul
 xcopy %SRC_ASSETS_PATH%\Plugins\Android\libs\KEngine.Android.jar KSFramework\Assets\Plugins\Android\libs\KEngine.Android.jar /S/Y/R/I
 
 :: xLua
-mklink /J KSFramework\Assets\Plugins\xLua xLua\Assets\XLua
+mklink /J KSFramework\Assets\XLua xLua\Assets\XLua
 
 xcopy xLua\Assets\Plugins\Android\* KSFramework\Assets\Plugins\Android /S/Y/R/I
 xcopy xLua\Assets\Plugins\iOS\* KSFramework\Assets\Plugins\iOS /S/Y/R/I
-xcopy xLua\Assets\Plugins\x64\* KSFramework\Assets\Plugins\x64 /S/Y/R/I
+xcopy xLua\Assets\Plugins\WebGL\* KSFramework\Assets\Plugins\WebGL /S/Y/R/I
+xcopy xLua\Assets\Plugins\WSA\* KSFramework\Assets\Plugins\WSA /S/Y/R/I
+xcopy xLua\Assets\Plugins\x86\* KSFramework\Assets\Plugins\x86 /S/Y/R/I
 xcopy xLua\Assets\Plugins\x86_64\* KSFramework\Assets\Plugins\x86_64 /S/Y/R/I
+xcopy xLua\Assets\Plugins\xlua.bundle\* KSFramework\Assets\Plugins\xlua.bundle /S/Y/R/I
 
 echo Finish!
 

@@ -1,8 +1,7 @@
 fileFormatVersion: 2
-guid: 5262478853bf0064894ed7286db6ace3
-folderAsset: yes
-timeCreated: 1486520889
-licenseType: Pro
+guid: 3fd23a6414095674493657a67a8043a1
+timeCreated: 1489995544
+licenseType: Free
 PluginImporter:
   serializedVersion: 1
   iconMap: {}
@@ -14,18 +13,13 @@ PluginImporter:
       enabled: 0
       settings: {}
     Editor:
-      enabled: 1
+      enabled: 0
       settings:
         DefaultValueInitialized: true
-    OSXIntel:
+    WindowsStoreApps:
       enabled: 1
-      settings: {}
-    OSXIntel64:
-      enabled: 1
-      settings: {}
-    OSXUniversal:
-      enabled: 1
-      settings: {}
+      settings:
+        CPU: x86
   userData: 
   assetBundleName: 
   assetBundleVariant: 

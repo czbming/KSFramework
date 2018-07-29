@@ -231,9 +231,9 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
-/KSFramework/Assets/Plugins/Editor/KEngineEditor
-/KSFramework/Assets/Plugins/KEngine
-/KSFramework/Assets/Plugins/Slua_Managed
+/KSFramework/Assets/Editor/KEngineEditor
+/KSFramework/Assets/KEngine
+/KSFramework/Assets/XLua
 /KSFramework/Library
 /KSFramework/Temp
 /KSFramework/*.csproj
@@ -246,6 +246,4 @@ _Pvt_Extensions
 /KSFramework/Product/**/*.meta
 *UnityVS*
 
-
 /KSFramework/Assets/StreamingAssets/Setting
-/KSFramework/Assets/Plugins/xLua
