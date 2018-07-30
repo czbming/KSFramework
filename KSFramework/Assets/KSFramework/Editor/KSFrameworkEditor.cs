@@ -106,10 +106,15 @@ Shorcuts:
                 foreach (var windowAsset in windowAssets)
                 {
                     var uiName = windowAsset.name;
-                    var scriptPath = string.Format("{0}/{1}/UI/UI{2}.lua", KResourceModule.EditorProductFullPath,
-                        luaPath, uiName);
+                    var scriptPath = string.Format("{0}/{1}/UI/{2}/{3}.lua", KResourceModule.EditorProductFullPath,
+                        luaPath, uiName, uiName);
                     if (!File.Exists(scriptPath))
                     {
+                        var uiDir = string.Format("{0}/{1}/UI/{2}/", KResourceModule.EditorProductFullPath, luaPath, uiName);
+                        if (!Directory.Exists(uiDir))
+                        {
+                            Directory.CreateDirectory(uiDir);
+                        }
                         File.WriteAllText(scriptPath, LuaUITempalteCode.Replace("$UI_NAME", "UI" + uiName));
                         Debug.LogWarning("New Lua Script: " + scriptPath);
                     }
@@ -130,10 +135,12 @@ Shorcuts:
         /// UI Lua Scripts Tempalte Code
         /// </summary>
         private static string LuaUITempalteCode = @"
-local UIBase = import('KSFramework/UIBase')
+local UIBase = import('UI/UIBase')
 
-if not Cookie then local Cookie = Slua.GetClass('KSFramework.Cookie') end
-if not Log then Log = Slua.GetClass('KEngine.Log') end
+if not Cookie then local Cookie = CS.KSFramework.Cookie end
+if not I18N then I18N = CS.KSFramework.I18N end
+if not UIModule then UIModule = CS.KEngine.UI.UIModule end
+if not Log then Log = CS.KEngine.Log end
 
 local $UI_NAME = {}
 extends($UI_NAME, UIBase)
